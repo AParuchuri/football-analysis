@@ -3,17 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-//  const [playerName, setPlayerName] = useState("");
-//  const [goals, setGoals] = useState(0);
-//  const [teamName, setTeamName] = useState("");
 
   const [topScorers, setTopScorers] = useState([])
 
-//  useEffect(() => {
-//    fetch('/laliga').then(res => res.json()).then(data => {
-//      setTopScorers(data)
-//    });
-//  }, []);
+ useEffect(() => {
+   fetch('/laliga').then(res => res.json()).then(data => {
+     setTopScorers(data)
+   });
+ }, []);
 
 
   function getLeague(league) {
@@ -29,6 +26,9 @@ function App() {
 
         <h1>Top Scorers</h1>
         <tbody>
+          <td>Player Name</td>
+          <td>Goals Scored</td>
+          <td>Team Name</td>
           {topScorers.map(player => <tr key={player.playerName}>
             <td className='playerName'>{player.playerName}</td>
             <td className='goals'>{player.goals}</td>

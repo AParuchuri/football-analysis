@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+tbody > tr > td {
+  border-bottom: 2px solid #999;
+}
+
+tr, td {
+  border: 1px solid #bbb;
+  padding: 2px 8px 0;
+  text-align: left;
+}
